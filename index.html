@@ -21,6 +21,95 @@
 <script src="js/modernizr.js"></script>
 
 <body>
+    <!-- Loading CSS -->
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: 1s all;
+            opacity: 0;
+        }
+        
+        .loading.show {
+            opacity: 1;
+        }
+        
+        .loading .spin {
+            border: 3px solid hsla(185, 100%, 62%, 0.2);
+            border-top-color: #3cefff;
+            border-radius: 50%;
+            width: 3em;
+            height: 3em;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- Loading HTML -->
+    <div class="loading show">
+        <div class="spin"></div>
+    </div>
+
+    <!-- Loading Javascript -->
+    <script>
+        // Loading
+        var Loading = (loadingDelayHidden = 0) => {
+            let loading = null;
+            const myLoadingDelayHidden = loadingDelayHidden;
+            let imgs = [];
+            let lenImgs = 0;
+            let counterImgsLoading = 0;
+
+            function incrementCounterImgs() {
+                counterImgsLoading += 1;
+                if (counterImgsLoading === lenImgs) {
+                    hideLoading()
+                }
+            }
+
+            function hideLoading() {
+                if (loading !== null) {
+                    loading.classList.remove('show');
+                    setTimeout(function() {
+                        loading.remove()
+                    }, myLoadingDelayHidden)
+                }
+            }
+
+            function init() {
+                document.addEventListener('DOMContentLoaded', function() {
+                    loading = document.querySelector('.loading');
+                    imgs = Array.from(document.images);
+                    lenImgs = imgs.length;
+                    if (imgs.length === 0) {
+                        hideLoading()
+                    } else {
+                        imgs.forEach(function(img) {
+                            img.addEventListener('load', incrementCounterImgs, false)
+                        })
+                    }
+                })
+            }
+            return {
+                'init': init
+            }
+        }
+
+        Loading(1000).init();
+    </script>
     <main class="header">
         <div class=" color-fondo-oscuro">
             <div class="contenedor header-centar-padre">
@@ -94,7 +183,7 @@
             </h2>
             <ol>
                 <li>
-                    <a href="http://ecutroniccomputadorasautomotrices.com/" target="_blank">
+                    <a href="http://ecutroniccomputadorasautomotrices.com/" title="Ir a Ecutronic-Computadoras Automotrices" target="_blank" rel="noopener noreferrer">
                         <p>Ecutronic-Computadoras Automotrices</p>
                     </a>
                 </li>
@@ -108,9 +197,12 @@
         </div>
     </section>
 
+
+
     <section class="contenedor">
         <h2>Galeria</h2>
         <p class="parrafo-galeria">(Para disfrutar al maximo del diseño de la galeria, se puede ver en un dispositivo mas grande)</p>
+
         <div class="grid-galeria">
 
             <div class="estlos-galeria foto-galeria-1"></div>
@@ -134,23 +226,23 @@
         <h3>Redes Sociales</h3>
         <div class="centar-redes-sociales">
 
-            <a href="https://www.facebook.com/arigomez04 " target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/arigomez04 " title="Ir a Facebook" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-facebook-f"></i>
             </a>
 
-            <a href="https://www.instagram.com/ariamzi04?r=nametag" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/ariamzi04?r=nametag" title="Ir a Instagram" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-instagram"></i>
             </a>
 
-            <a href="https://api.whatsapp.com/send?phone=+528113257604" target="_blank" rel="noopener noreferrer">
+            <a href="https://api.whatsapp.com/send?phone=+528113257604" title="Ir a WhatsApp" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-whatsapp "></i>
             </a>
 
-            <a href="https://m.me/arigomez04" target="_blank" rel="noopener noreferrer">
+            <a href="https://m.me/arigomez04" title="Ir a Messenger" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-facebook-messenger "></i>
             </a>
 
-            <a href="https://t.me/Ari_gomez04" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/Ari_gomez04" title="Ir a Telegram" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-telegram-plane "></i>
             </a>
 
