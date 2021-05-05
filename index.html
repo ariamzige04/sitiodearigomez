@@ -23,13 +23,13 @@
 <body>
     <!-- Loading CSS -->
     <style>
-        .loading {
+        .loader {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: white;
+            background-color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,16 +38,16 @@
             opacity: 0;
         }
         
-        .loading.show {
+        .loader.show {
             opacity: 1;
         }
         
-        .loading .spin {
-            border: 3px solid hsla(185, 100%, 62%, 0.2);
-            border-top-color: #3cefff;
+        .loader .spin {
+            border: 6px solid rgba(255, 255, 255, 0.534);
+            border-top-color: #01a199;
             border-radius: 50%;
-            width: 3em;
-            height: 3em;
+            width: 10rem;
+            height: 10rem;
             animation: spin 1s linear infinite;
         }
         
@@ -59,57 +59,22 @@
     </style>
 
     <!-- Loading HTML -->
-    <div class="loading show">
+    <div class="loader show">
         <div class="spin"></div>
     </div>
 
-    <!-- Loading Javascript -->
-    <script>
-        // Loading
-        var Loading = (loadingDelayHidden = 0) => {
-            let loading = null;
-            const myLoadingDelayHidden = loadingDelayHidden;
-            let imgs = [];
-            let lenImgs = 0;
-            let counterImgsLoading = 0;
 
-            function incrementCounterImgs() {
-                counterImgsLoading += 1;
-                if (counterImgsLoading === lenImgs) {
-                    hideLoading()
-                }
-            }
-
-            function hideLoading() {
-                if (loading !== null) {
-                    loading.classList.remove('show');
-                    setTimeout(function() {
-                        loading.remove()
-                    }, myLoadingDelayHidden)
-                }
-            }
-
-            function init() {
-                document.addEventListener('DOMContentLoaded', function() {
-                    loading = document.querySelector('.loading');
-                    imgs = Array.from(document.images);
-                    lenImgs = imgs.length;
-                    if (imgs.length === 0) {
-                        hideLoading()
-                    } else {
-                        imgs.forEach(function(img) {
-                            img.addEventListener('load', incrementCounterImgs, false)
-                        })
-                    }
-                })
-            }
-            return {
-                'init': init
-            }
-        }
-
-        Loading(1000).init();
+    <!-- loader -->
+    <div class="loader"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $(".loader").fadeOut("slow");
+        });
     </script>
+    <!-- fin loader -->
+
+
     <main class="header">
         <div class=" color-fondo-oscuro">
             <div class="contenedor header-centar-padre">
@@ -125,6 +90,11 @@
             </div>
         </div>
     </main>
+    <a href="#">
+        <div class="ir-arriba">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </a>
 
     <section class="contenedor">
         <h2>Lugares</h2>
@@ -134,26 +104,26 @@
                 <div class="imagenes-principales">
                     <div class="imagen-fondo-diseño imagen-1"></div>
                 </div>
-                <p>Contenido de muestra: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam est placeat blanditiis, doloremque consectetur dignissimos vitae nulla quam </p>
+                <p>Contenido de muestra: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam est placeat blanditiis </p>
             </div>
 
             <div class="padre-imagenes-texto">
                 <div class="imagenes-principales">
                     <div class="imagen-fondo-diseño imagen-2"></div>
                 </div>
-                <p>Contenido de muestra: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam est placeat blanditiis, doloremque consectetur dignissimos vitae nulla quam </p>
+                <p>Contenido de muestra: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam est placeat blanditiis </p>
             </div>
             <div class="padre-imagenes-texto">
                 <div class="imagenes-principales">
                     <div class="imagen-fondo-diseño imagen-3"></div>
                 </div>
-                <p>Contenido de muestra: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam est placeat blanditiis, doloremque consectetur dignissimos vitae nulla quam </p>
+                <p>Contenido de muestra: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam est placeat blanditiis </p>
             </div>
             <div class="padre-imagenes-texto">
                 <div class="imagenes-principales">
                     <div class="imagen-fondo-diseño imagen-4"></div>
                 </div>
-                <p>Contenido de muestra: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam est placeat blanditiis, doloremque consectetur dignissimos vitae nulla quam </p>
+                <p>Contenido de muestra: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam est placeat blanditiis </p>
             </div>
 
         </div>
@@ -189,7 +159,7 @@
                 </li>
 
                 <li>
-                    <a href="/">
+                    <a href="#">
                         <p>Y esta pagina web</p>
                     </a>
                 </li>
@@ -221,6 +191,8 @@
 
 
     </section>
+
+
 
     <footer class="footer">
         <h3>Redes Sociales</h3>

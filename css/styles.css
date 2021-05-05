@@ -1,481 +1,511 @@
-        html {
-            box-sizing: border-box;
-            font-size: 62.5%;
-            text-decoration: none;
-            /** Reset para REMS - 62.5% = 10px de 16px **/
-        }
-        
-         :root {
-            --fuenteprincipal: 'Sarabun', sans-serif;
-            --primario: #01a199f3;
-            --secundario: #01a136f3;
-            --gris: #bebebe;
-            --blanco: #ffffff;
-            --negro: #2b2b2b;
-            --tamañofuente: 2rem;
-        }
-        
-        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;800&display=swap');
-        *,
-        *:before,
-        *:after {
-            box-sizing: inherit;
-        }
-        
-         ::selection {
-            color: var(--blanco);
-            background-color: var(--primario);
-        }
-        
-        body {
-            font-size: 1.6rem;
-            line-height: 1.5;
-            font-family: var(--fuenteprincipal);
-            background-image: linear-gradient(to top, #f2fffff3 0%, white 100%);
-        }
-        /** Globales **/
-        
-        img {
-            max-width: 100%;
-        }
-        
-        .contenedor {
-            width: 92%;
-            max-width: 100rem;
-            /** = 1200px; **/
-            margin: 0 auto;
-        }
-        
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: var(--primario);
-            font-weight: 800;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 5rem;
-        }
-        
-        h2 {
-            font-size: 3.5rem;
-        }
-        
-        h3 {
-            font-size: 3rem;
-        }
-        
-        h4 {
-            font-size: 2rem;
-        }
-        
-        a {
-            text-decoration: none;
-            transition: .4s ease-in-out, .4s ease-in-out;
-        }
-        
-        p {
-            color: var(--negro);
-            font-weight: 400;
-            font-size: var(--tamañofuente);
-        }
-        /** poner cddigo abajo **/
-        
-        .webp .header {
-            background-image: url(../webp/header.webp);
-        }
-        
-        .no-webp .header {
-            background-image: url(../img/header-compressed.jpg);
-        }
-        
-        .header {
-            height: 100vh;
-            max-height: 100rem;
-            background-position: center center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
-        }
-        
-        .header h1 {
-            margin: .5rem;
-        }
-        
-        .color-fondo-oscuro {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-        
-        .header-centar-padre {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        .header-centrar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .header p {
-            color: var(--blanco);
-            text-align: center;
-        }
-        
-        .linea-color {
-            width: 50vw;
-            height: 1rem;
-            background: rgba(1, 161, 153, 1);
-            background: -moz-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(1, 161, 153, 1)), color-stop(100%, rgba(1, 161, 54, 1)));
-            background: -webkit-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-            background: -o-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-            background: -ms-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-            background: linear-gradient(to right, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#01a199', endColorstr='#01a136', GradientType=1);
-            border-radius: 1rem;
-        }
-        
-        @media (min-width: 700px) {
-            .grid-imagenes {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                column-gap: 2rem;
-            }
-        }
-        
-        @media (min-width: 965px) {
-            .grid-imagenes {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                column-gap: 2rem;
-            }
-        }
-        
-        .padre-imagenes-texto p {
-            text-align: center;
-        }
-        
-        .imagenes-principales {
-            width: 15rem;
-            height: 15rem;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto;
-            -webkit-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-            -moz-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-            box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-        }
-        
-        .imagen-fondo-diseño {
-            height: 100%;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .no-webp .imagen-1 {
-            background-image: url(../img/imagen1-compressed.jpg);
-        }
-        
-        .no-webp .imagen-2 {
-            background-image: url(../img/imagen2-compressed.jpg);
-        }
-        
-        .no-webp .imagen-3 {
-            background-image: url(../img/imagen3-compressed.jpg);
-        }
-        
-        .no-webp .imagen-4 {
-            background-image: url(../img/imagen4-compressed.jpg);
-        }
-        
-        .webp .imagen-1 {
-            background-image: url(../webp/imagen1.webp);
-        }
-        
-        .webp .imagen-2 {
-            background-image: url(../webp/imagen2.webp);
-        }
-        
-        .webp .imagen-3 {
-            background-image: url(../webp/imagen3.webp);
-        }
-        
-        .webp .imagen-4 {
-            background-image: url(../webp/imagen4.webp);
-        }
-        
-        .seccion-sobre-mi {
-            background-color: var(--secundario);
-            padding: 1rem 0 5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .seccion-sobre-mi h2 {
-            color: var(--blanco);
-        }
-        
-        .seccion-sobre-mi p {
-            color: var(--blanco);
-        }
-        
-        @media (min-width: 768px) {
-            .grid-sobre-mi {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                column-gap: 2rem;
-            }
-        }
-        
-        .foto-personal {
-            height: 50vh;
-            max-height: 40rem;
-            width: 100%;
-            margin: 0 auto;
-        }
-        
-        .webp .foto-ari {
-            background-image: url(../webp/foto_ari.webp);
-        }
-        
-        .no-webp .foto-ari {
-            background-image: url(../img/foto\ ari.jpg);
-        }
-        
-        .foto-ari {
-            height: 100%;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 1rem;
-            -webkit-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-            -moz-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-            box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-        }
-        
-        .centrar-vertcalmente-p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin: 1rem 0;
-        }
-        
-        .centrar-vertcalmente-p i {
-            padding: 0 2rem 0 2rem;
-            font-size: 3rem;
-            color: var(--gris);
-        }
-        
-        .centrar-vertcalmente-p p {
-            padding: 2rem 0;
-            border-top: 1rem solid var(--gris);
-            border-bottom: 1rem solid var(--gris);
-        }
-        
-        .seccion-mis-paginas p:hover {
-            transition: .4s ease-in-out, .4s ease-in-out;
-            color: var(--secundario);
-        }
-        /**GALERIA **/
-        
-        @media (max-width: 549px) {
-            .foto-galeria-6,
-            .foto-galeria-7,
-            .foto-galeria-8,
-            .foto-galeria-9,
-            .foto-galeria-10,
-            .foto-galeria-11 {
-                display: none;
-            }
-        }
-        
-        @media (min-width: 550px) {
-            .parrafo-galeria {
-                display: none;
-            }
-        }
-        
-        .grid-galeria {
-            display: grid;
-            column-gap: 2rem;
-            row-gap: 2rem;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 550px) {
-            .grid-galeria {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .foto-galeria-1,
-            .foto-galeria-4,
-            .foto-galeria-7,
-            .foto-galeria-10 {
-                grid-column: 1 / 3;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .grid-galeria {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .foto-galeria-1 {
-                grid-column: 1 / 3;
-                grid-row: 1;
-            }
-            .foto-galeria-7 {
-                grid-column: 2 / 4;
-                grid-row: 3;
-            }
-            .foto-galeria-11 {
-                grid-column: 1 / 3;
-                grid-row: 5;
-            }
-            .foto-galeria-4,
-            .foto-galeria-10 {
-                grid-column: auto;
-            }
-        }
-        
-        .estlos-galeria {
-            height: 15rem;
-            border-radius: 3px;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .no-webp .foto-galeria-1 {
-            background-image: url(../img/four-loko-Z_sY8kdDbKo-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-1 {
-            background-image: url(../webp/four-loko-Z_sY8kdDbKo-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-2 {
-            background-image: url(../img/ian-williams-aTNLbP7B9QM-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-2 {
-            background-image: url(../webp/ian-williams-aTNLbP7B9QM-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-3 {
-            background-image: url(../img/ivan-perez-gGZE3YviT7E-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-3 {
-            background-image: url(../webp/ivan-perez-gGZE3YviT7E-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-4 {
-            background-image: url(../img/juan-goyache-qQgdgob-2tI-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-4 {
-            background-image: url(../webp/juan-goyache-qQgdgob-2tI-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-5 {
-            background-image: url(../img/juliana-barquero-9225STV9W-M-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-5 {
-            background-image: url(../webp/uliana-barquero-9225STV9W-M-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-6 {
-            background-image: url(../img/luciano-paris-3g_r4lxrICk-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-6 {
-            background-image: url(../webp/luciano-paris-3g_r4lxrICk-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-7 {
-            background-image: url(../img/roberto-blacio-01Gu3OjGvQw-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-7 {
-            background-image: url(../webp/roberto-blacio-01Gu3OjGvQw-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-8 {
-            background-image: url(../img/zulma-velez-QGZAH69gcOM-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-8 {
-            background-image: url(../webp/zulma-velez-QGZAH69gcOM-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-9 {
-            background-image: url(../img/amilcar-alvarez-garcia-IHX-TZelMdY-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-9 {
-            background-image: url(../webp/-alvarez-garcia-IHX-TZelMdY-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-10 {
-            background-image: url(../img/carlos-carvallo-32k2vJtYtZo-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-10 {
-            background-image: url(../webp/carlos-carvallo-32k2vJtYtZo-unsplash.webp);
-        }
-        
-        .no-webp .foto-galeria-11 {
-            background-image: url(../img/daniel-blasco-GOfuruA4ud8-unsplash-compressed.jpg);
-        }
-        
-        .webp .foto-galeria-11 {
-            background-image: url(../webp/daniel-blasco-GOfuruA4ud8-unsplash.webp);
-        }
-        /**FIN GALERIA **/
-        
-        .footer {
-            background-color: var(--negro);
-            padding: 5rem;
-        }
-        
-        .footer h3 {
-            color: var(--secundario);
-        }
-        
-        .centar-redes-sociales {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .centar-redes-sociales a {
-            width: 3rem;
-            height: 3rem;
-            padding: 2rem;
-            margin-right: 1.5rem;
-            border: 3px solid var(--secundario);
-            border-radius: 50%;
-            color: var(--blanco);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-        }
-        
-        .centar-redes-sociales a:last-of-type {
-            margin-right: 0;
-        }
-        
-        .centar-redes-sociales a:hover {
-            border: 3px solid var(--blanco);
-            color: var(--primario);
-        }
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    text-decoration: none;
+    /** Reset para REMS - 62.5% = 10px de 16px **/
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fuenteprincipal: 'Sarabun', sans-serif;
+    --primario: #01a199;
+    --secundario: #01a136;
+    --gris: #bebebe;
+    --blanco: #ffffff;
+    --negro: #2b2b2b;
+    --tamañofuente: 2rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;800&display=swap');
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+::selection {
+    color: var(--blanco);
+    background-color: var(--primario);
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: var(--fuenteprincipal);
+}
+
+
+/** Globales **/
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    width: 92%;
+    max-width: 100rem;
+    /** = 1200px; **/
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--primario);
+    font-weight: 800;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    transition: .4s ease-in-out, .4s ease-in-out;
+}
+
+p {
+    color: var(--negro);
+    font-weight: 400;
+    font-size: var(--tamañofuente);
+}
+
+
+/** poner cddigo abajo **/
+
+.webp .header {
+    background-image: url(../webp/header.webp);
+}
+
+.no-webp .header {
+    background-image: url(../img/header-compressed.jpg);
+}
+
+.header {
+    height: 100vh;
+    max-height: 100rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+}
+
+.header h1 {
+    margin: .5rem;
+}
+
+.color-fondo-oscuro {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header-centar-padre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header-centrar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.header p {
+    color: var(--blanco);
+    text-align: center;
+}
+
+.linea-color {
+    width: 50vw;
+    height: 1rem;
+    background: rgba(1, 161, 153, 1);
+    background: -moz-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(1, 161, 153, 1)), color-stop(100%, rgba(1, 161, 54, 1)));
+    background: -webkit-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
+    background: -o-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
+    background: linear-gradient(to right, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#01a199', endColorstr='#01a136', GradientType=1);
+    border-radius: 1rem;
+}
+
+@media (min-width: 700px) {
+    .grid-imagenes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+@media (min-width: 965px) {
+    .grid-imagenes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.padre-imagenes-texto p {
+    text-align: center;
+}
+
+.imagenes-principales {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
+}
+
+.imagen-fondo-diseño {
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ir-arriba {
+    position: fixed;
+    left: var(--tamañofuente);
+    bottom: var(--tamañofuente);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--primario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 17px 0px rgb(0 0 0 / 41%);
+}
+
+.ir-arriba i {
+    font-size: var(--tamañofuente);
+    color: var(--blanco);
+}
+
+.no-webp .imagen-1 {
+    background-image: url(../img/imagen1-compressed.jpg);
+}
+
+.no-webp .imagen-2 {
+    background-image: url(../img/imagen2-compressed.jpg);
+}
+
+.no-webp .imagen-3 {
+    background-image: url(../img/imagen3-compressed.jpg);
+}
+
+.no-webp .imagen-4 {
+    background-image: url(../img/imagen4-compressed.jpg);
+}
+
+.webp .imagen-1 {
+    background-image: url(../webp/imagen1.webp);
+}
+
+.webp .imagen-2 {
+    background-image: url(../webp/imagen2.webp);
+}
+
+.webp .imagen-3 {
+    background-image: url(../webp/imagen3.webp);
+}
+
+.webp .imagen-4 {
+    background-image: url(../webp/imagen4.webp);
+}
+
+.seccion-sobre-mi {
+    background-color: var(--secundario);
+    padding: 1rem 0 5rem;
+    margin-top: 1.5rem;
+}
+
+.seccion-sobre-mi h2 {
+    color: var(--blanco);
+}
+
+.seccion-sobre-mi p {
+    color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+    .grid-sobre-mi {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.foto-personal {
+    height: 50vh;
+    max-height: 40rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.webp .foto-ari {
+    background-image: url(../webp/foto_ari.webp);
+}
+
+.no-webp .foto-ari {
+    background-image: url(../img/foto\ ari.jpg);
+}
+
+.foto-ari {
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
+}
+
+.centrar-vertcalmente-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.centrar-vertcalmente-p i {
+    padding: 0 2rem 0 2rem;
+    font-size: 3rem;
+    color: var(--blanco);
+}
+
+.centrar-vertcalmente-p p {
+    padding: 2rem 0;
+    border-top: 1rem solid var(--blanco);
+    border-bottom: 1rem solid var(--blanco);
+}
+
+.seccion-mis-paginas p {
+    transition: .4s ease-in-out;
+}
+
+.seccion-mis-paginas p:hover {
+    color: var(--secundario);
+}
+
+
+/**GALERIA **/
+
+@media (max-width: 549px) {
+    .foto-galeria-6,
+    .foto-galeria-7,
+    .foto-galeria-8,
+    .foto-galeria-9,
+    .foto-galeria-10,
+    .foto-galeria-11 {
+        display: none;
+    }
+}
+
+@media (min-width: 550px) {
+    .parrafo-galeria {
+        display: none;
+    }
+}
+
+.grid-galeria {
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 550px) {
+    .grid-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .foto-galeria-1,
+    .foto-galeria-4,
+    .foto-galeria-7,
+    .foto-galeria-10 {
+        grid-column: 1 / 3;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .foto-galeria-1 {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+    .foto-galeria-7 {
+        grid-column: 2 / 4;
+        grid-row: 3;
+    }
+    .foto-galeria-11 {
+        grid-column: 1 / 3;
+        grid-row: 5;
+    }
+    .foto-galeria-4,
+    .foto-galeria-10 {
+        grid-column: auto;
+    }
+}
+
+.estlos-galeria {
+    height: 15rem;
+    border-radius: 3px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.no-webp .foto-galeria-1 {
+    background-image: url(../img/four-loko-Z_sY8kdDbKo-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-1 {
+    background-image: url(../webp/four-loko-Z_sY8kdDbKo-unsplash.webp);
+}
+
+.no-webp .foto-galeria-2 {
+    background-image: url(../img/ian-williams-aTNLbP7B9QM-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-2 {
+    background-image: url(../webp/ian-williams-aTNLbP7B9QM-unsplash.webp);
+}
+
+.no-webp .foto-galeria-3 {
+    background-image: url(../img/ivan-perez-gGZE3YviT7E-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-3 {
+    background-image: url(../webp/ivan-perez-gGZE3YviT7E-unsplash.webp);
+}
+
+.no-webp .foto-galeria-4 {
+    background-image: url(../img/juan-goyache-qQgdgob-2tI-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-4 {
+    background-image: url(../webp/juan-goyache-qQgdgob-2tI-unsplash.webp);
+}
+
+.no-webp .foto-galeria-5 {
+    background-image: url(../img/juliana-barquero-9225STV9W-M-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-5 {
+    background-image: url(../webp/uliana-barquero-9225STV9W-M-unsplash.webp);
+}
+
+.no-webp .foto-galeria-6 {
+    background-image: url(../img/luciano-paris-3g_r4lxrICk-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-6 {
+    background-image: url(../webp/luciano-paris-3g_r4lxrICk-unsplash.webp);
+}
+
+.no-webp .foto-galeria-7 {
+    background-image: url(../img/roberto-blacio-01Gu3OjGvQw-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-7 {
+    background-image: url(../webp/roberto-blacio-01Gu3OjGvQw-unsplash.webp);
+}
+
+.no-webp .foto-galeria-8 {
+    background-image: url(../img/zulma-velez-QGZAH69gcOM-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-8 {
+    background-image: url(../webp/zulma-velez-QGZAH69gcOM-unsplash.webp);
+}
+
+.no-webp .foto-galeria-9 {
+    background-image: url(../img/amilcar-alvarez-garcia-IHX-TZelMdY-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-9 {
+    background-image: url(../webp/-alvarez-garcia-IHX-TZelMdY-unsplash.webp);
+}
+
+.no-webp .foto-galeria-10 {
+    background-image: url(../img/carlos-carvallo-32k2vJtYtZo-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-10 {
+    background-image: url(../webp/carlos-carvallo-32k2vJtYtZo-unsplash.webp);
+}
+
+.no-webp .foto-galeria-11 {
+    background-image: url(../img/daniel-blasco-GOfuruA4ud8-unsplash-compressed.jpg);
+}
+
+.webp .foto-galeria-11 {
+    background-image: url(../webp/daniel-blasco-GOfuruA4ud8-unsplash.webp);
+}
+
+
+/**FIN GALERIA **/
+
+.footer {
+    background-color: var(--negro);
+    padding: 5rem;
+}
+
+.footer h3 {
+    color: var(--secundario);
+}
+
+.centar-redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centar-redes-sociales a {
+    width: 3rem;
+    height: 3rem;
+    padding: 2rem;
+    margin-right: 1.5rem;
+    border: 3px solid var(--secundario);
+    border-radius: 50%;
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.centar-redes-sociales a:last-of-type {
+    margin-right: 0;
+}
+
+.centar-redes-sociales a:hover {
+    border: 3px solid var(--blanco);
+    color: var(--primario);
+}
