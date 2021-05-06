@@ -8,15 +8,15 @@ html {
 
 :root {
     --fuenteprincipal: 'Sarabun', sans-serif;
-    --primario: #01a199;
+    --primario: #1cc5bd;
     --secundario: #01a136;
     --gris: #bebebe;
     --blanco: #ffffff;
-    --negro: #2b2b2b;
+    --negro: #181818;
     --tamañofuente: 2rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;800&display=swap');
 *,
 *:before,
 *:after {
@@ -31,6 +31,7 @@ html {
 body {
     font-size: 1.6rem;
     line-height: 1.5;
+    font-weight: 300;
     font-family: var(--fuenteprincipal);
 }
 
@@ -80,7 +81,7 @@ a {
 
 p {
     color: var(--negro);
-    font-weight: 400;
+    font-weight: 300;
     font-size: var(--tamañofuente);
 }
 
@@ -187,7 +188,7 @@ p {
 .ir-arriba {
     position: fixed;
     left: var(--tamañofuente);
-    bottom: var(--tamañofuente);
+    bottom: 10rem;
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
@@ -196,11 +197,17 @@ p {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 10px 17px 0px rgb(0 0 0 / 41%);
+    transition: .4s all;
+    opacity: .9;
 }
 
 .ir-arriba i {
     font-size: var(--tamañofuente);
     color: var(--blanco);
+}
+
+.ir-arriba:hover {
+    background-color: var(--secundario);
 }
 
 .no-webp .imagen-1 {
@@ -479,6 +486,7 @@ p {
 
 .footer h3 {
     color: var(--secundario);
+    margin: 0 0 2rem;
 }
 
 .centar-redes-sociales {
