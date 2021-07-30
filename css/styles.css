@@ -7,16 +7,15 @@ html {
 }
 
 :root {
-    --fuenteprincipal: 'Sarabun', sans-serif;
-    --primario: #1cc5bd;
-    --secundario: #01a136;
+    --fuenteprincipal: 'Poppins', sans-serif;
+    --primario: #3aaed8;
+    --secundario: #097418;
     --gris: #bebebe;
     --blanco: #ffffff;
     --negro: #181818;
     --tamañofuente: 2rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;800&display=swap');
 *,
 *:before,
 *:after {
@@ -102,7 +101,6 @@ p {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
 }
 
@@ -135,32 +133,20 @@ p {
 
 .linea-color {
     width: 50vw;
-    height: 1rem;
-    background: rgba(1, 161, 153, 1);
-    background: -moz-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(1, 161, 153, 1)), color-stop(100%, rgba(1, 161, 54, 1)));
-    background: -webkit-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-    background: -o-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-    background: -ms-linear-gradient(left, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-    background: linear-gradient(to right, rgba(1, 161, 153, 1) 0%, rgba(1, 161, 54, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#01a199', endColorstr='#01a136', GradientType=1);
+    height: 5px;
+    background: linear-gradient(to right, var(--primario) 0%, var(--secundario) 100%);
     border-radius: 1rem;
 }
 
-@media (min-width: 700px) {
-    .grid-imagenes {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-    }
+.grid-imagenes {
+    display: flex;
+    overflow: auto;
+    justify-content: center;
 }
 
-@media (min-width: 965px) {
-    .grid-imagenes {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 2rem;
-    }
+.padre-imagenes-texto {
+    margin-bottom: var(--tamañofuente);
+    margin-left: var(--tamañofuente);
 }
 
 .padre-imagenes-texto p {
@@ -173,9 +159,9 @@ p {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    -webkit-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-    -moz-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-    box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
+    -webkit-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.158);
+    -moz-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.158);
+    box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.158);
 }
 
 .imagen-fondo-diseño {
@@ -284,10 +270,12 @@ p {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 1rem;
-    -webkit-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-    -moz-box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
-    box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.158);
+    -webkit-border-radius: 68% 32% 59% 41% / 44% 45% 55% 56%;
+    -moz-border-radius: 68% 32% 59% 41% / 44% 45% 55% 56%;
+    -ms-border-radius: 68% 32% 59% 41% / 44% 45% 55% 56%;
+    -o-border-radius: 68% 32% 59% 41% / 44% 45% 55% 56%;
+    border-radius: 68% 32% 59% 41% / 44% 45% 55% 56%;
 }
 
 .centrar-vertcalmente-p {
@@ -306,8 +294,8 @@ p {
 
 .centrar-vertcalmente-p p {
     padding: 2rem 0;
-    border-top: 1rem solid var(--blanco);
-    border-bottom: 1rem solid var(--blanco);
+    border-top: 5px solid var(--blanco);
+    border-bottom: 5px solid var(--blanco);
 }
 
 .seccion-mis-paginas p {
@@ -332,12 +320,6 @@ p {
     }
 }
 
-@media (min-width: 550px) {
-    .parrafo-galeria {
-        display: none;
-    }
-}
-
 .grid-galeria {
     display: grid;
     column-gap: 2rem;
@@ -346,16 +328,15 @@ p {
     margin-bottom: 2rem;
 }
 
-@media (min-width: 550px) {
-    .grid-galeria {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .foto-galeria-1,
-    .foto-galeria-4,
-    .foto-galeria-7,
-    .foto-galeria-10 {
-        grid-column: 1 / 3;
-    }
+.grid-galeria {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.foto-galeria-1,
+.foto-galeria-4,
+.foto-galeria-7,
+.foto-galeria-10 {
+    grid-column: 1 / 3;
 }
 
 @media (min-width: 768px) {
@@ -485,7 +466,7 @@ p {
 }
 
 .footer h3 {
-    color: var(--secundario);
+    color: var(--blanco);
     margin: 0 0 2rem;
 }
 
