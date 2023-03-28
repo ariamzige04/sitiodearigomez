@@ -1,2 +1,0 @@
-# sitiodearigomez
-sitio mio
